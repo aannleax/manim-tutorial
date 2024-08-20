@@ -31,6 +31,13 @@ class Title(Slide):
         render.add(text_date)
 
         render.wait()
+        render.next_slide()
+
+        text_manim = text.tex(r"\textbf{Manim}", color=WHITE, font_size=124).next_to(text_title, DOWN, buff=0.5).shift(0.75*LEFT)
+        text_manim.add_updater(lambda object: object.rotate(0.105))
+        render.play(GrowFromCenter(text_manim))
+
+        render.wait()
 
     
    

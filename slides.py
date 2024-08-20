@@ -3,15 +3,20 @@ from manim_slides import Slide
 
 from util import text, coordinates
 
-from scenes import title, what, community, animation_a
+from scenes import title, what, community, animation_a, animation_b, installation, hello_world, outline, project
 
-create_title = False
+create_title = True
 
 # Put your slides here
 slides = [
-    # what.What(),
-    # community.Community(),
+    what.What(),
+    community.Community(),
+    animation_b.AnimationB(),
     animation_a.AnimationA(),
+    hello_world.HelloWorld(),
+    outline.Outline(),
+    project.Project(),
+    installation.Installation(),
 ]
 
 title_long = "Creating Animated Slides With"
@@ -63,7 +68,9 @@ class Slides(Slide):
 
             self.clear()
             self.draw_background(index + 1, len(slides))
-            self.draw_slide_title(slide.title)
+
+            if slide.title is not None:
+                self.draw_slide_title(slide.title)
           
             slide.construct(self)
 

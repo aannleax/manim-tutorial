@@ -6,7 +6,7 @@ from util import text, coordinates
 class AnimationA(Slide):
     def __init__(self):
         super().__init__()
-        self.title = "Example (1)"
+        self.title = "Example (2)"
         self.triangle_color = BLUE
 
     def construct(self, render):
